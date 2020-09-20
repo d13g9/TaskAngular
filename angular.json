@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dw3test"
+    }
+  },
+  "defaultProject": "dw3test",
+  "cli": {
+    "analytics": "960f8325-65e8-416b-b0ce-a5e77fdb6190"
+  }
 }

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div id="user-data">
+              <div class="form-group">
+                  <label for="tasktitle">Task title</label>
+                  <input type="text" id="tasktitle" class="form-control" [(ngModel)]="mytask.tasktitle" name="tasktitle" required #tasktitle/>
+                  <span class="help-block" *ngIf="!tasktitle.valid && tasktitle.touched">Please it is mandatory</span>
+              </div>
+              <div class="form-group">
+                <label for="taskdescription">Task description</label>
+                <textarea type="" id="taskdescription" class="form-control" [(ngModel)]="mytask.taskdescription" name="taskdescription" required #taskdescription>
+
+                </textarea>
+                <span class="help-block" *ngIf="!taskdescription.valid && taskdescription.touched">Please it is mandatory</span>
+            </div>
+            <div class="form-group" *ngIf="mytask.status">
+              <label for="status">Status</label>
+               <select matNativeControl required id="status" [(ngModel)]="mytask.status" name="status">
+                  <option value="open">Open</option>
+                  <option value="close">Close</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">submit</button>
+          <span class="help-block">{{message}}</span>
+      </form>
+    </div>
+  </div>
+</div>
+

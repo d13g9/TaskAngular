@@ -1,0 +1,28 @@
+
+<div *ngIf="tasks.length > 0;else could_notfetchData">
+   
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Status</td>
+                <td>Edit</td>
+                <td>Exclude</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mytask of tasks">
+                <td>{{mytask.id}}</td>
+                <td>{{mytask.tasktitle}}</td>
+                <td>{{mytask.taskdescription}}</td>
+                <td>{{mytask.status}}</td>
+                <td><button (click)="updateTask(mytask.id)">Editar</button></td>
+                <td><button (click)="deleteTask(mytask.id)">Excluir</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #could_notfetchData><span>{{message}}</span></ng-template>
